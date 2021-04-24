@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Components/GameGUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Components/StaticEnemy.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Components/Environment/Chair.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Components/Environment/Table.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Components/Pickup.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Components/Door.tscn" type="PackedScene" id=12]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 3 )
@@ -374,6 +375,54 @@ position = Vector2( 208, 272 )
 [node name="Floor134" parent="LevelObjects" instance=ExtResource( 8 )]
 position = Vector2( 208, 288 )
 
+[node name="Floor135" parent="LevelObjects" instance=ExtResource( 8 )]
+position = Vector2( 159.855, -31.9984 )
+
+[node name="Floor136" parent="LevelObjects" instance=ExtResource( 8 )]
+position = Vector2( 159.855, -16.1121 )
+
+[node name="Floor137" parent="LevelObjects" instance=ExtResource( 8 )]
+position = Vector2( 160.494, -0.438477 )
+
+[node name="Floor138" parent="LevelObjects" instance=ExtResource( 8 )]
+position = Vector2( 160.068, 15.8025 )
+
+[node name="Floor139" parent="LevelObjects" instance=ExtResource( 8 )]
+position = Vector2( 176.876, 15.5188 )
+
+[node name="Floor140" parent="LevelObjects" instance=ExtResource( 8 )]
+position = Vector2( 193.543, 14.5968 )
+
+[node name="Floor141" parent="LevelObjects" instance=ExtResource( 8 )]
+position = Vector2( 210.564, 14.8096 )
+
+[node name="Floor142" parent="LevelObjects" instance=ExtResource( 8 )]
+position = Vector2( 210.422, -2.99164 )
+
+[node name="Floor143" parent="LevelObjects" instance=ExtResource( 8 )]
+position = Vector2( 192.054, -2.63703 )
+
+[node name="Floor144" parent="LevelObjects" instance=ExtResource( 8 )]
+position = Vector2( 176.876, -2.63703 )
+
+[node name="Floor145" parent="LevelObjects" instance=ExtResource( 8 )]
+position = Vector2( 176.451, -17.4596 )
+
+[node name="Floor146" parent="LevelObjects" instance=ExtResource( 8 )]
+position = Vector2( 192.905, -17.6014 )
+
+[node name="Floor147" parent="LevelObjects" instance=ExtResource( 8 )]
+position = Vector2( 210.422, -18.4525 )
+
+[node name="Floor148" parent="LevelObjects" instance=ExtResource( 8 )]
+position = Vector2( 209.784, -32.2112 )
+
+[node name="Floor149" parent="LevelObjects" instance=ExtResource( 8 )]
+position = Vector2( 192.621, -32.5658 )
+
+[node name="Floor150" parent="LevelObjects" instance=ExtResource( 8 )]
+position = Vector2( 175.813, -32.5658 )
+
 [node name="Floor117" parent="LevelObjects" instance=ExtResource( 8 )]
 position = Vector2( 176, 288 )
 
@@ -476,6 +525,9 @@ movement_mode = "Sine"
 [node name="Button" parent="LevelObjects" instance=ExtResource( 7 )]
 position = Vector2( 160, 272 )
 targets = [ NodePath("../ActivableFloor"), NodePath("../ActivableFloor2"), NodePath("../ActivableFloor3"), NodePath("../ActivableFloor4"), NodePath("../ActivableFloor5"), NodePath("../ActivableFloor6"), NodePath("../ActivableFloor7"), NodePath("../ActivableFloor8"), NodePath("../ActivableFloor9") ]
+
+[node name="Door" parent="LevelObjects" instance=ExtResource( 12 )]
+position = Vector2( 126.187, 28.706 )
 
 [node name="Pickup" parent="." instance=ExtResource( 11 )]
 position = Vector2( 32, 64 )
