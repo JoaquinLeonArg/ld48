@@ -5,3 +5,9 @@
 bin/
 build/
 lib/
+
+# Git plugin
+git_api.gdnlib
+
+# Others
+.DS_Store
