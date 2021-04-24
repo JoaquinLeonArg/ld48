@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DesertSands.png-5d9ee1b6353c87c18b75b1a265e3bcbf.stex"
+path="res://.import/cone1.png-9ad0381e5143069c96ac275d45277d4e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/DesertSands.png"
-dest_files=[ "res://.import/DesertSands.png-5d9ee1b6353c87c18b75b1a265e3bcbf.stex" ]
+source_file="res://Assets/Images/cone1.png"
+dest_files=[ "res://.import/cone1.png-9ad0381e5143069c96ac275d45277d4e.stex" ]
 
 [params]
 
