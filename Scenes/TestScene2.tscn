@@ -14,9 +14,9 @@
 
 [node name="Viewport" parent="." instance=ExtResource( 2 )]
 
-[node name="PlayerChamera" parent="Viewport" instance=ExtResource( 1 )]
-zoom = Vector2( 0.5, 0.5 )
-tracked_object = NodePath("../../PlayerCharacter")
+[node name="PlayerChamera" parent="." instance=ExtResource( 1 )]
+zoom = Vector2( 0.25, 0.25 )
+tracked_object = NodePath("../PlayerCharacter")
 
 [node name="StaticEnemy" parent="." instance=ExtResource( 5 )]
 position = Vector2( 180.003, 115.127 )

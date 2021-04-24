@@ -1,4 +1,4 @@
-extends Control
+extends Sprite
 class_name Item
 
 export(int) var max_uses = 3
