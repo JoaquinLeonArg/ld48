@@ -8,8 +8,7 @@ var destroy_timer = 0
 
 func _process(delta):
 	self.destroy_timer += delta
-	if self.destroy_timer > 5:
-		
+	if self.destroy_timer > 5 and self.floor_tiles:
 		self.destroy_timer -= 5
 		var i = randi() % len(self.floor_tiles)
 		self.floor_tiles[i].spin_and_destroy()

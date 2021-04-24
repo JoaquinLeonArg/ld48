@@ -4,6 +4,9 @@ export(int, 3, 10) var active_time = 5
 
 var flashing = -1
 
+func is_destructible():
+	return false
+
 func activate():
 	$Sprite.visible = true
 	$CollisionShape2D.disabled = false

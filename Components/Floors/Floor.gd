@@ -4,8 +4,12 @@ class_name Floor
 var spinning: bool = false
 onready var base_position: Vector2 = $Sprite.position
 
+func is_destructible():
+	return true
+
 func _ready():
-	GameState.floor_tiles.append(self)
+	if self.is_destructible():
+		GameState.floor_tiles.append(self)
 
 func _process(delta):
 	if self.spinning:
