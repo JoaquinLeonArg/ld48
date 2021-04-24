@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/manRed_stand.png-a5aecccbcc19ff815c75ad18ef60a218.stex"
+path="res://.import/tables.png-3b1225e4e78b042fab05e8240d58bbae.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/PNG/Man Red/manRed_stand.png"
-dest_files=[ "res://.import/manRed_stand.png-a5aecccbcc19ff815c75ad18ef60a218.stex" ]
+source_file="res://Assets/Images/tables.png"
+dest_files=[ "res://.import/tables.png-3b1225e4e78b042fab05e8240d58bbae.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

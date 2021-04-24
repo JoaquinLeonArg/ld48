@@ -1,11 +1,14 @@
 extends TemplateCharacter
 
 var motion = Vector2(0, 0)
+var frame = 0
+
+func _ready():
+	GameState.player = self
 
 func _physics_process(delta):
 	update_movement()
 	move_and_slide(motion)
-	
 
 func update_movement():
 	# First we want to check the mouse position and rotate the character
@@ -25,3 +28,11 @@ func update_movement():
 		motion.x = clamp(motion.x + SPEED, 0, MAX_SPEED)
 	else:
 		motion.x = lerp(motion.x, 0, FRICTION)
+
+func _process(delta):
+	if motion.length() < 10:
+		self.frame = 0
+	else:
+		self.frame += delta*10
+	$Sprite.frame = int(self.frame) % 8
+		

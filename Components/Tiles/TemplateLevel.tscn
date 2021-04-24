@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Components/Tiles/Tiles.tres" type="TileSet" id=1]
@@ -6,6 +7,14 @@
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource( 3 )
+=======
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Components/Tiles/Tiles.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/Characters/PlayerCharacter.tscn" type="PackedScene" id=2]
+
+[node name="TemplateLevel" type="Node2D"]
+>>>>>>> 755266ae26268905f8aa258ad0c7cb463155daf0
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
