@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Components/Floor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Components/GameGUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Components/StaticEnemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/TestScene.gd" type="Script" id=3]
+[ext_resource path="res://Components/PlayerCharacter.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Components/Camera.tscn" type="PackedScene" id=5]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 3 )
@@ -13,44 +15,11 @@ angle_offset = 90
 turn_factor = 3.0
 movement_mode = "Sine"
 
-[node name="Floor" parent="." instance=ExtResource( 1 )]
-position = Vector2( 24, 24 )
+[node name="PlayerCharacter" parent="." instance=ExtResource( 4 )]
+position = Vector2( 136, 88 )
 
-[node name="Floor2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 40, 24 )
+[node name="Camera2D" parent="." instance=ExtResource( 5 )]
+zoom = Vector2( 0.5, 0.5 )
+tracked_object = NodePath("../PlayerCharacter")
 
-[node name="Floor3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 56, 24 )
-
-[node name="Floor4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 72, 24 )
-
-[node name="Floor5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 24, 40 )
-
-[node name="Floor6" parent="." instance=ExtResource( 1 )]
-position = Vector2( 40, 40 )
-
-[node name="Floor7" parent="." instance=ExtResource( 1 )]
-position = Vector2( 56, 40 )
-
-[node name="Floor8" parent="." instance=ExtResource( 1 )]
-position = Vector2( 72, 40 )
-
-[node name="Floor9" parent="." instance=ExtResource( 1 )]
-position = Vector2( 88, 40 )
-
-[node name="Floor10" parent="." instance=ExtResource( 1 )]
-position = Vector2( 88, 24 )
-
-[node name="Floor11" parent="." instance=ExtResource( 1 )]
-position = Vector2( 104, 40 )
-
-[node name="Floor12" parent="." instance=ExtResource( 1 )]
-position = Vector2( 104, 24 )
-
-[node name="Floor13" parent="." instance=ExtResource( 1 )]
-position = Vector2( 120, 24 )
-
-[node name="Floor14" parent="." instance=ExtResource( 1 )]
-position = Vector2( 120, 40 )
+[node name="Viewport" parent="." instance=ExtResource( 1 )]
