@@ -11,3 +11,6 @@ script = ExtResource( 3 )
 rotation = -1.5708
 texture = ExtResource( 2 )
 hframes = 8
+
+[node name="CollisionShape2D" parent="." index="1"]
+visible = true
