@@ -14,7 +14,7 @@ _global_script_classes=[ {
 "language": "NativeScript",
 "path": "res://git_api.gdns"
 }, {
-"base": "Control",
+"base": "Sprite",
 "class": "Item",
 "language": "GDScript",
 "path": "res://Components/Item.gd"
@@ -33,12 +33,13 @@ _global_script_class_icons={
 [application]
 
 config/name="LD48"
-run/main_scene="res://Scenes/TestScene.tscn"
+run/main_scene="res://Scenes/TestScene2.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 GameState="*res://Globals/GameState.gd"
+Globals="*res://Globals/Globals.gd"
 
 [display]
 
@@ -52,6 +53,29 @@ window/stretch/mode="2d"
 [gdnative]
 
 singletons=[ "res://git_api.gdnlib" ]
+
+[importer_defaults]
+
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"detect_3d": true,
+"flags/anisotropic": false,
+"flags/filter": false,
+"flags/mipmaps": false,
+"flags/repeat": 0,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
 
 [input]
 
@@ -85,6 +109,11 @@ wheel_down={
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":5,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="Floor"
+2d_physics/layer_2="Walls"
 
 [physics]
 
