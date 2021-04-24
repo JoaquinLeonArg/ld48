@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
+[ext_resource path="res://Components/GameGUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Components/StaticEnemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/TestScene.gd" type="Script" id=3]
 [ext_resource path="res://Components/PlayerCharacter.tscn" type="PackedScene" id=4]
@@ -20,3 +21,5 @@ position = Vector2( 136, 88 )
 [node name="Camera2D" parent="." instance=ExtResource( 5 )]
 zoom = Vector2( 0.5, 0.5 )
 tracked_object = NodePath("../PlayerCharacter")
+
+[node name="Viewport" parent="." instance=ExtResource( 1 )]
