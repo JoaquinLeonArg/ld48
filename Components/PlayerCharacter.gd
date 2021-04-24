@@ -1,4 +1,4 @@
-extends "res://Scenes/Characters/TemplateCharacter.gd"
+extends TemplateCharacter
 
 var motion = Vector2(0, 0)
 
