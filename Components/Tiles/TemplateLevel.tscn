@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Components/Tiles/Tiles.tres" type="TileSet" id=1]
-[ext_resource path="res://Scenes/Characters/PlayerCharacter.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Components/PlayerCharacter.tscn" type="PackedScene" id=2]
 
 [node name="TemplateLevel" type="Node2D"]
 

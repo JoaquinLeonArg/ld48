@@ -39,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="LD48"
-run/main_scene="res://Scenes/TestScene.tscn"
+run/main_scene="res://Scenes/Test.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -120,8 +120,6 @@ wheel_down={
 
 2d_physics/layer_1="Floor"
 2d_physics/layer_2="Walls"
-2d_physics/layer_3="Player"
-2d_physics/layer_4="Enemies"
 
 [physics]
 

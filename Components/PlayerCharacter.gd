@@ -31,7 +31,7 @@ func update_movement():
 		motion.x = clamp(motion.x + SPEED, 0, MAX_SPEED)
 	else:
 		motion.x = lerp(motion.x, 0, FRICTION)
-    
+	
 	if Input.is_action_just_pressed("ui_accept") and self.jump_ready and not self.jumping:
 		self.jumping = true
 		self.jump_ready = false
