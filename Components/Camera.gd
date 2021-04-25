@@ -8,6 +8,9 @@ export(NodePath) var tracked_object
 var target_offset = Vector2.ZERO
 var current_offset = Vector2.ZERO
 
+func _ready():
+	GameState.camera = self
+
 func _process(delta):
 	self.target_offset = get_viewport().get_mouse_position() / get_viewport().size - Vector2(0.5, 0.5)
 	self.current_offset = self.current_offset.move_toward(self.target_offset, delta*camera_speed*current_offset.distance_squared_to(target_offset))

@@ -2,6 +2,7 @@ extends Node
 
 var player = null
 var inventory = null
+var camera = null
 var floor_tiles = []
 
 var destroy_timer = 0

@@ -2,6 +2,9 @@ extends TemplateCharacter
 
 var motion = Vector2(0, 0)
 var frame = 0
+var active = true
+var jump_ready = true
+var jumping = false
 
 func _ready():
 	GameState.player = self
@@ -28,11 +31,25 @@ func update_movement():
 		motion.x = clamp(motion.x + SPEED, 0, MAX_SPEED)
 	else:
 		motion.x = lerp(motion.x, 0, FRICTION)
+    
+	if Input.is_action_just_pressed("ui_accept") and self.jump_ready and not self.jumping:
+		self.jumping = true
+		self.jump_ready = false
+		$Tween.interpolate_property(self, "scale", Vector2(1, 1), Vector2(1.3, 1.3), .4,Tween.TRANS_QUAD, Tween.EASE_OUT)
+		$Tween.start()
+		yield($Tween, "tween_completed")
+		$Tween.interpolate_property(self, "scale", Vector2(1.3, 1.3), Vector2(1, 1), .4,Tween.TRANS_QUAD, Tween.EASE_IN)
+		$Tween.start()
+		yield($Tween, "tween_completed")
+		self.jumping = false
+		yield(get_tree().create_timer(.1), "timeout")
+		self.jump_ready = true
 
 func _process(delta):
-	if motion.length() < 10:
+	if self.jumping:
+		self.frame = 2
+	elif motion.length() < 10:
 		self.frame = 0
 	else:
 		self.frame += delta*10
 	$Sprite.frame = int(self.frame) % 8
-		
