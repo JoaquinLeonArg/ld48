@@ -1,8 +1,6 @@
 extends TemplateCharacter
 
 var motion = Vector2(0, 0)
-<<<<<<< Updated upstream
-=======
 var frame = 0
 var active = true
 var jump_ready = true
@@ -10,12 +8,10 @@ var jumping = false
 
 func _ready():
 	GameState.player = self
->>>>>>> Stashed changes
 
 func _physics_process(delta):
 	update_movement()
 	move_and_slide(motion)
-	
 
 func update_movement():
 	# First we want to check the mouse position and rotate the character
@@ -35,9 +31,7 @@ func update_movement():
 		motion.x = clamp(motion.x + SPEED, 0, MAX_SPEED)
 	else:
 		motion.x = lerp(motion.x, 0, FRICTION)
-<<<<<<< Updated upstream
-=======
-		
+    
 	if Input.is_action_just_pressed("ui_accept") and self.jump_ready and not self.jumping:
 		self.jumping = true
 		self.jump_ready = false
@@ -59,5 +53,3 @@ func _process(delta):
 	else:
 		self.frame += delta*10
 	$Sprite.frame = int(self.frame) % 8
-		
->>>>>>> Stashed changes

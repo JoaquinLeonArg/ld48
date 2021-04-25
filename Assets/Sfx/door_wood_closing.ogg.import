@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/door_wood_closing.ogg-c274bceb13946220bd5127c2deb8f832.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/door_wood_closing.ogg"
+dest_files=[ "res://.import/door_wood_closing.ogg-c274bceb13946220bd5127c2deb8f832.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

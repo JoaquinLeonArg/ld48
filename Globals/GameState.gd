@@ -1,23 +1,16 @@
 extends Node
 
-<<<<<<< Updated upstream
-=======
 var player = null
 var inventory = null
 var camera = null
 var floor_tiles = []
->>>>>>> Stashed changes
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var destroy_timer = 0
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	self.destroy_timer += delta
+	if self.destroy_timer > 5 and self.floor_tiles:
+		self.destroy_timer -= 5
+		var i = randi() % len(self.floor_tiles)
+		self.floor_tiles[i].spin_and_destroy()
+		self.floor_tiles.remove(i)

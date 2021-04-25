@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/roguelikeitems.png-033bf8f033c040645d79fa50e48f8dcc.stex"
+path="res://.import/newspaper_item.png-cf8adc9d315b738aa94a9791cdce8f62.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/roguelikeitems.png"
-dest_files=[ "res://.import/roguelikeitems.png-033bf8f033c040645d79fa50e48f8dcc.stex" ]
+source_file="res://Assets/Images/newspaper_item.png"
+dest_files=[ "res://.import/newspaper_item.png-cf8adc9d315b738aa94a9791cdce8f62.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
