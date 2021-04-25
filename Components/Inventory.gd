@@ -34,3 +34,27 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_accept") and self.slots[self.selected_slot].get_child_count() == 1:
 		self.slots[self.selected_slot].get_child(0).on_use()
 		self.slots[self.selected_slot].get_child(0).process_durability()
+<<<<<<< Updated upstream
+=======
+
+func pickup(item: Node):
+	for child in self.slots[self.selected_slot].get_children():
+		self.slots[self.selected_slot].remove_child(child)
+		child.queue_free()
+	self.slots[self.selected_slot].add_child(item)
+
+func get_current_item():
+	if self.slots[self.selected_slot].get_child_count() > 0:
+		return self.slots[self.selected_slot].get_child(0)
+	return null
+
+func get_all_items():
+	var items = []
+	if self.slots[1].get_child_count() > 0:
+		items.append(self.slots[1].get_child(0))
+	if self.slots[2].get_child_count() > 0:
+		items.append(self.slots[2].get_child(0))
+	if self.slots[3].get_child_count() > 0:
+		items.append(self.slots[3].get_child(0))
+	return items
+>>>>>>> Stashed changes

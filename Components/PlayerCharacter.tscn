@@ -6,6 +6,20 @@
 
 [node name="PlayerCharacter" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
+SPEED = 10
+MAX_SPEED = 80
+FRICTION = 0.2
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 2 )
+<<<<<<< Updated upstream
+=======
+hframes = 8
+
+[node name="CollisionShape2D" parent="." index="1"]
+visible = true
+position = Vector2( 0, 0 )
+shape = SubResource( 1 )
+
+[node name="Tween" type="Tween" parent="." index="2"]
+>>>>>>> Stashed changes
