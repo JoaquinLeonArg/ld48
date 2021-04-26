@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Components/Door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Components/GameGUI.tscn" type="PackedScene" id=2]
@@ -9,7 +9,12 @@
 [ext_resource path="res://Components/BgEffect.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Components/Tiles/Level2.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Components/Spikes.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/LevelSupermarket.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Components/Environment/Square.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Components/Pickup.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/Images/cono.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Images/bolsadebasura.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Images/tacho.png" type="Texture" id=15]
 [ext_resource path="res://Components/ChangeFallSpeed.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Components/LevelEnd.tscn" type="PackedScene" id=18]
 
@@ -23,7 +28,6 @@ MAX_SPEED = 60
 
 [node name="BgEffect" parent="." instance=ExtResource( 7 )]
 position = Vector2( 0, 0 )
-amount = 1000
 
 [node name="GameGUI" parent="." instance=ExtResource( 2 )]
 
@@ -45,10 +49,6 @@ locked = true
 [node name="Pickup" parent="LevelElements" instance=ExtResource( 12 )]
 position = Vector2( 640, -288 )
 
-[node name="Pickup4" parent="LevelElements" instance=ExtResource( 12 )]
-position = Vector2( 112, -48 )
-static_item = 4
-
 [node name="Pickup2" parent="LevelElements" instance=ExtResource( 12 )]
 position = Vector2( 280, -608 )
 
@@ -63,6 +63,7 @@ targets = [ NodePath("../ActivableFloor2"), NodePath("../ActivableFloor3"), Node
 
 [node name="LevelEnd" parent="LevelElements" instance=ExtResource( 18 )]
 position = Vector2( 472, -504 )
+next_level = ExtResource( 10 )
 
 [node name="ActivableFloor2" parent="LevelElements" instance=ExtResource( 6 )]
 position = Vector2( 376, -520 )
@@ -224,6 +225,110 @@ fall_speed = 0.6
 [node name="ChangeFallSpeed2" parent="LevelElements" instance=ExtResource( 16 )]
 position = Vector2( 136, -664 )
 fall_speed = 0.15
+
+[node name="Square" parent="LevelElements" instance=ExtResource( 11 )]
+position = Vector2( 240, -152 )
+texture = ExtResource( 15 )
+
+[node name="Square2" parent="LevelElements" instance=ExtResource( 11 )]
+position = Vector2( 240, -200 )
+texture = ExtResource( 15 )
+
+[node name="Square3" parent="LevelElements" instance=ExtResource( 11 )]
+position = Vector2( 96, -200 )
+texture = ExtResource( 15 )
+
+[node name="Square4" parent="LevelElements" instance=ExtResource( 11 )]
+position = Vector2( 96, -312 )
+texture = ExtResource( 15 )
+
+[node name="Square5" parent="LevelElements" instance=ExtResource( 11 )]
+position = Vector2( 384, -368 )
+texture = ExtResource( 15 )
+
+[node name="Square6" parent="LevelElements" instance=ExtResource( 11 )]
+position = Vector2( 592, -520 )
+texture = ExtResource( 15 )
+
+[node name="Square7" parent="LevelElements" instance=ExtResource( 11 )]
+position = Vector2( 480, -672 )
+texture = ExtResource( 15 )
+
+[node name="Square8" parent="LevelElements" instance=ExtResource( 11 )]
+position = Vector2( 480, -656 )
+texture = ExtResource( 13 )
+
+[node name="Square12" parent="LevelElements" instance=ExtResource( 11 )]
+position = Vector2( 328, -640 )
+texture = ExtResource( 13 )
+
+[node name="Square13" parent="LevelElements" instance=ExtResource( 11 )]
+position = Vector2( 288, -496 )
+texture = ExtResource( 13 )
+
+[node name="Square14" parent="LevelElements" instance=ExtResource( 11 )]
+position = Vector2( 304, -544 )
+texture = ExtResource( 13 )
+
+[node name="Square15" parent="LevelElements" instance=ExtResource( 11 )]
+position = Vector2( 456, -456 )
+texture = ExtResource( 13 )
+
+[node name="Square16" parent="LevelElements" instance=ExtResource( 11 )]
+position = Vector2( 240, -360 )
+texture = ExtResource( 13 )
+
+[node name="Square17" parent="LevelElements" instance=ExtResource( 11 )]
+position = Vector2( 168, -208 )
+texture = ExtResource( 13 )
+
+[node name="Square18" parent="LevelElements" instance=ExtResource( 11 )]
+position = Vector2( 168, -288 )
+texture = ExtResource( 13 )
+
+[node name="Square19" parent="LevelElements" instance=ExtResource( 11 )]
+position = Vector2( 168, -352 )
+texture = ExtResource( 13 )
+
+[node name="Square20" parent="LevelElements" instance=ExtResource( 11 )]
+position = Vector2( 336, -360 )
+texture = ExtResource( 14 )
+
+[node name="Square21" parent="LevelElements" instance=ExtResource( 11 )]
+position = Vector2( 320, -360 )
+texture = ExtResource( 14 )
+
+[node name="Square22" parent="LevelElements" instance=ExtResource( 11 )]
+position = Vector2( 328, -368 )
+texture = ExtResource( 14 )
+
+[node name="Square23" parent="LevelElements" instance=ExtResource( 11 )]
+position = Vector2( 216, -416 )
+texture = ExtResource( 14 )
+
+[node name="Square24" parent="LevelElements" instance=ExtResource( 11 )]
+position = Vector2( 216, -408 )
+texture = ExtResource( 14 )
+
+[node name="Square25" parent="LevelElements" instance=ExtResource( 11 )]
+position = Vector2( 224, -656 )
+texture = ExtResource( 14 )
+
+[node name="Square26" parent="LevelElements" instance=ExtResource( 11 )]
+position = Vector2( 344, -680 )
+texture = ExtResource( 14 )
+
+[node name="Square9" parent="LevelElements" instance=ExtResource( 11 )]
+position = Vector2( 520, -624 )
+texture = ExtResource( 15 )
+
+[node name="Square10" parent="LevelElements" instance=ExtResource( 11 )]
+position = Vector2( 568, -664 )
+texture = ExtResource( 15 )
+
+[node name="Square11" parent="LevelElements" instance=ExtResource( 11 )]
+position = Vector2( 560, -592 )
+texture = ExtResource( 15 )
 
 [node name="NavPerros1" type="Navigation2D" parent="."]
 

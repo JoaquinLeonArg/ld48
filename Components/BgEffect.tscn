@@ -5,18 +5,18 @@
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0.0155039, 0.48062, 1 )
-colors = PoolColorArray( 0, 0, 0, 0, 0, 0.14902, 1, 0.313726, 1, 1, 1, 0 )
+colors = PoolColorArray( 0, 0, 0, 0, 0, 0.14902, 1, 0.509804, 1, 1, 1, 0 )
 
 [sub_resource type="GradientTexture" id=2]
 gradient = SubResource( 1 )
 
-[sub_resource type="Curve" id=5]
+[sub_resource type="Curve" id=3]
 _data = [ Vector2( 0, 0.0738636 ), 0.0, 0.0, 0, 0, Vector2( 0.5, 0.510227 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0829545 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=6]
-curve = SubResource( 5 )
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
 
-[sub_resource type="ParticlesMaterial" id=7]
+[sub_resource type="ParticlesMaterial" id=5]
 emission_shape = 2
 emission_box_extents = Vector3( 640, 360, 1 )
 flag_disable_z = true
@@ -27,7 +27,7 @@ initial_velocity = 10.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale_random = 0.2
-scale_curve = SubResource( 6 )
+scale_curve = SubResource( 4 )
 color_ramp = SubResource( 2 )
 hue_variation = 0.1
 hue_variation_random = 0.5
@@ -35,9 +35,9 @@ hue_variation_random = 0.5
 [node name="BgEffect" type="Particles2D"]
 position = Vector2( 640, 360 )
 z_index = -10
-amount = 100
-lifetime = 20.0
-preprocess = 10.0
-process_material = SubResource( 7 )
+amount = 2000
+lifetime = 50.0
+preprocess = 50.0
+process_material = SubResource( 5 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )

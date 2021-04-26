@@ -1,0 +1,100 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Components/Tiles/Level3.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Components/GameGUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Components/Camera.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Components/PlayerCharacter.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Components/Door.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Components/BgEffect.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Components/Pickup.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Components/ChangeFallSpeed.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Components/LevelEnd.tscn" type="PackedScene" id=18]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends CanvasModulate
+
+func _on_Timer_timeout():
+	self.visible = false
+	$Timer2.start(.3)
+
+func _on_Timer2_timeout():
+	self.visible = true
+	$Timer.start(3 + randf()*2)
+"
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Level3" parent="." instance=ExtResource( 1 )]
+
+[node name="PlayerCharacter" parent="." instance=ExtResource( 4 )]
+SPEED = 6
+MAX_SPEED = 60
+
+[node name="BgEffect" parent="." instance=ExtResource( 7 )]
+position = Vector2( 0, 0 )
+
+[node name="GameGUI" parent="." instance=ExtResource( 2 )]
+
+[node name="Camera2D" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( -160, -64 )
+tracked_object = NodePath("../PlayerCharacter")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.0392157, 0.0392157, 0.0392157, 1 )
+script = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="CanvasModulate"]
+autostart = true
+
+[node name="Timer2" type="Timer" parent="CanvasModulate"]
+autostart = true
+
+[node name="LevelElements" type="Node2D" parent="."]
+
+[node name="Pickup" parent="LevelElements" instance=ExtResource( 12 )]
+position = Vector2( 24, 0 )
+static_item = 5
+
+[node name="Pickup2" parent="LevelElements" instance=ExtResource( 12 )]
+position = Vector2( 336, 224 )
+static_item = 1
+
+[node name="Pickup5" parent="LevelElements" instance=ExtResource( 12 )]
+position = Vector2( 384, -192 )
+
+[node name="Pickup6" parent="LevelElements" instance=ExtResource( 12 )]
+position = Vector2( 192, 128 )
+
+[node name="Pickup3" parent="LevelElements" instance=ExtResource( 12 )]
+position = Vector2( 112, -144 )
+static_item = 1
+
+[node name="Pickup4" parent="LevelElements" instance=ExtResource( 12 )]
+position = Vector2( 48, 128 )
+static_item = 1
+
+[node name="Door" parent="LevelElements" instance=ExtResource( 5 )]
+position = Vector2( 504, -8 )
+rotation = 1.5708
+locked = true
+
+[node name="Door2" parent="LevelElements" instance=ExtResource( 5 )]
+position = Vector2( 536, -8 )
+rotation = 1.5708
+locked = true
+
+[node name="Door3" parent="LevelElements" instance=ExtResource( 5 )]
+position = Vector2( 568, -8 )
+rotation = 1.5708
+locked = true
+
+[node name="LevelEnd" parent="LevelElements" instance=ExtResource( 18 )]
+position = Vector2( 648, -8 )
+
+[node name="ChangeFallSpeed" parent="LevelElements" instance=ExtResource( 16 )]
+position = Vector2( 16, 0 )
+fall_speed = 2.0
+
+[connection signal="timeout" from="CanvasModulate/Timer" to="CanvasModulate" method="_on_Timer_timeout"]
+[connection signal="timeout" from="CanvasModulate/Timer2" to="CanvasModulate" method="_on_Timer2_timeout"]

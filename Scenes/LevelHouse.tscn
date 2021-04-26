@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Components/Door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Components/GameGUI.tscn" type="PackedScene" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Components/ChangeFallSpeed.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Assets/Images/cajones-0006.png" type="Texture" id=17]
 [ext_resource path="res://Components/LevelEnd.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/LevelStreet.tscn" type="PackedScene" id=19]
 
 [node name="Node2D" type="Node2D"]
 
@@ -29,7 +30,6 @@ MAX_SPEED = 60
 
 [node name="BgEffect" parent="." instance=ExtResource( 7 )]
 position = Vector2( 0, 0 )
-amount = 1000
 
 [node name="GameGUI" parent="." instance=ExtResource( 2 )]
 
@@ -45,7 +45,7 @@ color = Color( 0.627451, 0.627451, 0.627451, 1 )
 
 [node name="Button" parent="LevelElements" instance=ExtResource( 5 )]
 position = Vector2( -32, -480 )
-targets = [ NodePath("../ActivableFloor"), NodePath("../ActivableFloor2"), NodePath("../ActivableFloor3"), NodePath("../ActivableFloor4"), NodePath("../ActivableFloor5"), NodePath("../ActivableFloor6"), NodePath("../ActivableFloor7"), NodePath("../ActivableFloor8"), NodePath("../ActivableFloor9"), NodePath("../ActivableFloor10"), NodePath("../ActivableFloor11"), NodePath("../ActivableFloor12"), NodePath("../ActivableFloor13"), NodePath("../ActivableFloor14"), NodePath("../ActivableFloor15"), NodePath("../ActivableFloor31"), NodePath("../ActivableFloor32"), NodePath("../ActivableFloor33"), NodePath("../ActivableFloor34"), NodePath("../ActivableFloor35"), NodePath("../ActivableFloor36"), NodePath("../ActivableFloor37"), NodePath("../ActivableFloor38"), NodePath("../ActivableFloor39"), NodePath("../ActivableFloor40"), NodePath("../ActivableFloor41"), NodePath("../ActivableFloor42"), NodePath("../ActivableFloor43"), NodePath("../ActivableFloor44"), NodePath("../ActivableFloor45") ]
+targets = [ NodePath("../ActivableFloor"), NodePath("../ActivableFloor3"), NodePath("../ActivableFloor4"), NodePath("../ActivableFloor8"), NodePath("../ActivableFloor11"), NodePath("../ActivableFloor15"), NodePath("../ActivableFloor31"), NodePath("../ActivableFloor33"), NodePath("../ActivableFloor35"), NodePath("../ActivableFloor41"), NodePath("../ActivableFloor43"), NodePath("../ActivableFloor45") ]
 
 [node name="Door" parent="LevelElements" instance=ExtResource( 1 )]
 position = Vector2( -8, -200 )
@@ -54,11 +54,6 @@ locked = true
 [node name="Door2" parent="LevelElements" instance=ExtResource( 1 )]
 position = Vector2( 40, -152 )
 rotation = 1.5708
-
-[node name="Door3" parent="LevelElements" instance=ExtResource( 1 )]
-position = Vector2( -72, -40 )
-rotation = -1.5708
-locked = true
 
 [node name="Door4" parent="LevelElements" instance=ExtResource( 1 )]
 position = Vector2( 24, -440 )
@@ -69,44 +64,17 @@ position = Vector2( 24, -648 )
 [node name="ActivableFloor" parent="LevelElements" instance=ExtResource( 6 )]
 position = Vector2( 8, -600 )
 
-[node name="ActivableFloor2" parent="LevelElements" instance=ExtResource( 6 )]
-position = Vector2( 16, -600 )
-
 [node name="ActivableFloor3" parent="LevelElements" instance=ExtResource( 6 )]
 position = Vector2( 24, -600 )
 
 [node name="ActivableFloor4" parent="LevelElements" instance=ExtResource( 6 )]
-position = Vector2( 32, -600 )
-
-[node name="ActivableFloor5" parent="LevelElements" instance=ExtResource( 6 )]
 position = Vector2( 40, -600 )
 
-[node name="ActivableFloor6" parent="LevelElements" instance=ExtResource( 6 )]
-position = Vector2( 8, -592 )
-
-[node name="ActivableFloor7" parent="LevelElements" instance=ExtResource( 6 )]
-position = Vector2( 16, -592 )
-
 [node name="ActivableFloor8" parent="LevelElements" instance=ExtResource( 6 )]
-position = Vector2( 24, -592 )
-
-[node name="ActivableFloor9" parent="LevelElements" instance=ExtResource( 6 )]
-position = Vector2( 32, -592 )
-
-[node name="ActivableFloor10" parent="LevelElements" instance=ExtResource( 6 )]
-position = Vector2( 40, -592 )
+position = Vector2( 24, -584 )
 
 [node name="ActivableFloor11" parent="LevelElements" instance=ExtResource( 6 )]
 position = Vector2( 8, -584 )
-
-[node name="ActivableFloor12" parent="LevelElements" instance=ExtResource( 6 )]
-position = Vector2( 16, -584 )
-
-[node name="ActivableFloor13" parent="LevelElements" instance=ExtResource( 6 )]
-position = Vector2( 24, -584 )
-
-[node name="ActivableFloor14" parent="LevelElements" instance=ExtResource( 6 )]
-position = Vector2( 32, -584 )
 
 [node name="ActivableFloor15" parent="LevelElements" instance=ExtResource( 6 )]
 position = Vector2( 40, -584 )
@@ -114,44 +82,17 @@ position = Vector2( 40, -584 )
 [node name="ActivableFloor31" parent="LevelElements" instance=ExtResource( 6 )]
 position = Vector2( 8, -552 )
 
-[node name="ActivableFloor32" parent="LevelElements" instance=ExtResource( 6 )]
-position = Vector2( 16, -552 )
-
 [node name="ActivableFloor33" parent="LevelElements" instance=ExtResource( 6 )]
 position = Vector2( 24, -552 )
-
-[node name="ActivableFloor34" parent="LevelElements" instance=ExtResource( 6 )]
-position = Vector2( 32, -552 )
 
 [node name="ActivableFloor35" parent="LevelElements" instance=ExtResource( 6 )]
 position = Vector2( 40, -552 )
 
-[node name="ActivableFloor36" parent="LevelElements" instance=ExtResource( 6 )]
-position = Vector2( 8, -544 )
-
-[node name="ActivableFloor37" parent="LevelElements" instance=ExtResource( 6 )]
-position = Vector2( 16, -544 )
-
-[node name="ActivableFloor38" parent="LevelElements" instance=ExtResource( 6 )]
-position = Vector2( 24, -544 )
-
-[node name="ActivableFloor39" parent="LevelElements" instance=ExtResource( 6 )]
-position = Vector2( 32, -544 )
-
-[node name="ActivableFloor40" parent="LevelElements" instance=ExtResource( 6 )]
-position = Vector2( 40, -544 )
-
 [node name="ActivableFloor41" parent="LevelElements" instance=ExtResource( 6 )]
 position = Vector2( 8, -536 )
 
-[node name="ActivableFloor42" parent="LevelElements" instance=ExtResource( 6 )]
-position = Vector2( 16, -536 )
-
 [node name="ActivableFloor43" parent="LevelElements" instance=ExtResource( 6 )]
 position = Vector2( 24, -536 )
-
-[node name="ActivableFloor44" parent="LevelElements" instance=ExtResource( 6 )]
-position = Vector2( 32, -536 )
 
 [node name="ActivableFloor45" parent="LevelElements" instance=ExtResource( 6 )]
 position = Vector2( 40, -536 )
@@ -192,7 +133,7 @@ position = Vector2( 0, -40 )
 text = "WASD: Move"
 
 [node name="TutorialText3" parent="LevelElements" instance=ExtResource( 11 )]
-position = Vector2( 96, -152 )
+position = Vector2( 96, -208 )
 text = "Click: Use item"
 
 [node name="TutorialText2" parent="LevelElements" instance=ExtResource( 11 )]
@@ -213,18 +154,6 @@ static_item = 2
 
 [node name="Pickup3" parent="LevelElements" instance=ExtResource( 12 )]
 position = Vector2( -144, -584 )
-static_item = 4
-
-[node name="Pickup5" parent="LevelElements" instance=ExtResource( 12 )]
-position = Vector2( -24, -152 )
-static_item = 4
-
-[node name="Pickup6" parent="LevelElements" instance=ExtResource( 12 )]
-position = Vector2( -24, -136 )
-static_item = 4
-
-[node name="Pickup7" parent="LevelElements" instance=ExtResource( 12 )]
-position = Vector2( -24, -120 )
 static_item = 4
 
 [node name="Pickup4" parent="LevelElements" instance=ExtResource( 12 )]
@@ -258,8 +187,13 @@ scale = Vector2( 0.8, 0.9 )
 texture = ExtResource( 15 )
 
 [node name="ChangeFallSpeed" parent="LevelElements" instance=ExtResource( 16 )]
-position = Vector2( -88, -1040 )
+position = Vector2( -80, -1040 )
+fall_speed = 0.3
+
+[node name="ChangeFallSpeed2" parent="LevelElements" instance=ExtResource( 16 )]
+position = Vector2( -208, -1040 )
 fall_speed = 0.3
 
 [node name="LevelEnd" parent="LevelElements" instance=ExtResource( 18 )]
 position = Vector2( -304, -1400 )
+next_level = ExtResource( 19 )
