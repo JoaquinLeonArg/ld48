@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Components/Tiles/Level1Dark.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Components/PlayerCharacterTorch.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Components/Pickup.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Components/Door.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Components/PerroGordo.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Components/Box.tscn" type="PackedScene" id=8]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 238.783, 64.0899, 224.436, 63.3635, 163.418, 9.97261, 163.6, -1.10509, 207.729, -65.0289, 237.512, -95.538, 207.729, -78.649, 223.892, -95.9012, 160.694, -65.2105, 144.895, -0.923492, 143.624, -31.0694, 145.621, 15.6023, 144.532, 10.1542, 113.296, -94.0852, 112.933, -111.701, 223.165, -110.611, 160.331, -78.2858, -14.5514, -16.178, -15.1728, -30.6971, 95.7255, -32.876, 97.1336, -94.63, 110.754, -31.251, 224.255, 78.4364, 113.478, 78.7997, 112.57, 64.8163, 111.117, 15.6023, 99.1312, 63.7267, 96.952, 33.2176, -30.0816, 15.9788, -31.3431, -15.2149, -14.1882, 17.4183, -13.4618, 30.4936 )
@@ -22,6 +23,8 @@ camera_distance = 80
 tracked_object = NodePath("../PlayerCharacterTorch")
 
 [node name="PlayerCharacterTorch" parent="." instance=ExtResource( 2 )]
+collision_layer = 4
+collision_mask = 11
 
 [node name="Level1" parent="." instance=ExtResource( 1 )]
 
@@ -50,10 +53,17 @@ position = Vector2( 65.7973, -12.0066 )
 [node name="Pickup5" parent="Pickups" instance=ExtResource( 5 )]
 position = Vector2( 225.448, -58.0884 )
 
+[node name="Pickup6" parent="Pickups" instance=ExtResource( 5 )]
+position = Vector2( 20.3851, -20.3349 )
+static_item = 0
+
 [node name="Objects" type="Node2D" parent="."]
 
 [node name="Door" parent="Objects" instance=ExtResource( 6 )]
 position = Vector2( 146.018, 3.76242 )
+
+[node name="Box" parent="Objects" instance=ExtResource( 8 )]
+position = Vector2( 50.338, -21.7809 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
 

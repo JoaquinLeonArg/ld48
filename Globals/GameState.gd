@@ -1,5 +1,6 @@
 extends Node
 
+var enemies = []
 var player = null
 var inventory = null
 var camera = null

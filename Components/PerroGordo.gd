@@ -16,7 +16,21 @@ export var FOV_distance = 80
 export var walk_speed = 0.5
 
 
+#func _on_KinematicBody2D_input_event(viewport, event, shape_idx):
+#	if event.get_class() == BUTTONTYPE and event.pressed == true:
+		#Button index 1 = left, right = 2
+		#Click = true button down, false button up
+#		print("Mouse Click Down", event.pressed, ", ", event.button_index)
+	#	emit_signal("ENEMY_HOVERED", self, event.button_index)
+
+func _on_KinematicBody2D_input_event(viewport, event, shape_idx):
+	if (event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT):
+		print("Clicked")
+
+
+
 func _ready():
+	GameState.enemies.append(self)
 	chasing = false
 	$AnimationPlayer.play("Stand")
 	Player = GameState.player
@@ -69,3 +83,4 @@ func update_path():
 			$Timer.start()
 	else:
 		path.remove(0)
+
