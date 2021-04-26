@@ -120,6 +120,8 @@ wheel_down={
 
 2d_physics/layer_1="Floor"
 2d_physics/layer_2="Walls"
+2d_physics/layer_3="Player"
+2d_physics/layer_4="Enemies"
 
 [physics]
 
