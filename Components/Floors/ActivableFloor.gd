@@ -17,7 +17,8 @@ func activate():
 	$CollisionShape2D.disabled = true
 	self.flashing = -1
 	
-func _process(_delta):
+func _process(delta):
+	._process(delta)
 	if self.flashing >= 0:
 		self.flashing += 1
 		$Sprite.visible = self.flashing % 3 == 0

@@ -6,6 +6,8 @@ var active = true
 var jump_ready = true
 var jumping = false
 var disable_input = false
+var fall_timer = 0
+var invulnerable = false
 
 func _ready():
 	GameState.player = self
@@ -44,17 +46,28 @@ func update_movement():
 	if Input.is_action_just_pressed("jump") and self.jump_ready and not self.jumping and not self.disable_input:
 		self.jumping = true
 		self.jump_ready = false
-		$Tween.interpolate_property(self, "scale", Vector2(1, 1), Vector2(1.3, 1.3), .4,Tween.TRANS_QUAD, Tween.EASE_OUT)
+		$Tween.interpolate_property(self, "scale", Vector2(1, 1), Vector2(1.35, 1.35), .5,Tween.TRANS_QUAD, Tween.EASE_OUT)
 		$Tween.start()
 		yield($Tween, "tween_completed")
-		$Tween.interpolate_property(self, "scale", Vector2(1.3, 1.3), Vector2(1, 1), .4,Tween.TRANS_QUAD, Tween.EASE_IN)
+		if not is_instance_valid(self):
+			return
+		$Tween.interpolate_property(self, "scale", Vector2(1.35, 1.35), Vector2(1, 1), .5,Tween.TRANS_QUAD, Tween.EASE_IN)
 		$Tween.start()
 		yield($Tween, "tween_completed")
+		if not is_instance_valid(self):
+			return
 		self.jumping = false
-		yield(get_tree().create_timer(.1), "timeout")
+		yield(get_tree().create_timer(.15), "timeout")
+		if not is_instance_valid(self):
+			return
 		self.jump_ready = true
 
 func _process(delta):
+	self.fall_timer += 1
+	if self.fall_timer > 5 and not self.jumping and not GameState.restarting and not self.invulnerable:
+		self.disable_input = true
+		GameState.restarting = true
+		GameState.camera.transition(null)
 	if self.jumping:
 		self.frame = 2
 	elif motion.length() < 10:
@@ -62,3 +75,11 @@ func _process(delta):
 	else:
 		self.frame += delta*10
 	$Sprite.frame = int(self.frame) % 8
+	
+	self.process_flashlight()
+	
+func process_flashlight():
+	if GameState.inventory.get_current_item() and "FLASHLIGHT" in GameState.inventory.get_current_item().item_flags():
+		$FlashLight.enabled = true
+	else:
+		$FlashLight.enabled = false

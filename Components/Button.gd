@@ -19,5 +19,9 @@ func activate():
 
 
 func _process(delta):
-	if Input.is_key_pressed(KEY_ENTER):
-		self.activate()
+	if GameState.player.position.distance_to(self.position) < 32:
+		$Hint.visible = true
+		if Input.is_action_just_pressed("interact"):
+			self.activate()
+	else:
+		$Hint.visible = false

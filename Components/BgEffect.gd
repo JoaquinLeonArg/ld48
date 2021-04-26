@@ -1,4 +1,5 @@
 extends Particles2D
 
 func _process(_delta):
-	self.position = GameState.player.position
+	if GameState.player:
+		self.position = GameState.player.position

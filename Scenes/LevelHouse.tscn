@@ -1,0 +1,265 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Components/Door.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Components/GameGUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Components/Camera.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Components/PlayerCharacter.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Components/Button.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Components/Floors/ActivableFloor.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Components/BgEffect.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Components/Tiles/Level1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Components/Spikes.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Components/Environment/Square.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Components/TutorialText.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Components/Pickup.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/Images/sofa-0008.png" type="Texture" id=13]
+[ext_resource path="res://Components/Environment/Lamp.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Assets/Images/alfombra.png" type="Texture" id=15]
+[ext_resource path="res://Components/ChangeFallSpeed.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Assets/Images/cajones-0006.png" type="Texture" id=17]
+[ext_resource path="res://Components/LevelEnd.tscn" type="PackedScene" id=18]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Level1" parent="." instance=ExtResource( 8 )]
+
+[node name="PlayerCharacter" parent="." instance=ExtResource( 4 )]
+SPEED = 6
+MAX_SPEED = 60
+
+[node name="BgEffect" parent="." instance=ExtResource( 7 )]
+position = Vector2( 0, 0 )
+amount = 1000
+
+[node name="GameGUI" parent="." instance=ExtResource( 2 )]
+
+[node name="Camera2D" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( -160, -64 )
+tracked_object = NodePath("../PlayerCharacter")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.627451, 0.627451, 0.627451, 1 )
+
+[node name="LevelElements" type="Node2D" parent="."]
+
+[node name="Button" parent="LevelElements" instance=ExtResource( 5 )]
+position = Vector2( -32, -480 )
+targets = [ NodePath("../ActivableFloor"), NodePath("../ActivableFloor2"), NodePath("../ActivableFloor3"), NodePath("../ActivableFloor4"), NodePath("../ActivableFloor5"), NodePath("../ActivableFloor6"), NodePath("../ActivableFloor7"), NodePath("../ActivableFloor8"), NodePath("../ActivableFloor9"), NodePath("../ActivableFloor10"), NodePath("../ActivableFloor11"), NodePath("../ActivableFloor12"), NodePath("../ActivableFloor13"), NodePath("../ActivableFloor14"), NodePath("../ActivableFloor15"), NodePath("../ActivableFloor31"), NodePath("../ActivableFloor32"), NodePath("../ActivableFloor33"), NodePath("../ActivableFloor34"), NodePath("../ActivableFloor35"), NodePath("../ActivableFloor36"), NodePath("../ActivableFloor37"), NodePath("../ActivableFloor38"), NodePath("../ActivableFloor39"), NodePath("../ActivableFloor40"), NodePath("../ActivableFloor41"), NodePath("../ActivableFloor42"), NodePath("../ActivableFloor43"), NodePath("../ActivableFloor44"), NodePath("../ActivableFloor45") ]
+
+[node name="Door" parent="LevelElements" instance=ExtResource( 1 )]
+position = Vector2( -8, -200 )
+locked = true
+
+[node name="Door2" parent="LevelElements" instance=ExtResource( 1 )]
+position = Vector2( 40, -152 )
+rotation = 1.5708
+
+[node name="Door3" parent="LevelElements" instance=ExtResource( 1 )]
+position = Vector2( -72, -40 )
+rotation = -1.5708
+locked = true
+
+[node name="Door4" parent="LevelElements" instance=ExtResource( 1 )]
+position = Vector2( 24, -440 )
+
+[node name="Door5" parent="LevelElements" instance=ExtResource( 1 )]
+position = Vector2( 24, -648 )
+
+[node name="ActivableFloor" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 8, -600 )
+
+[node name="ActivableFloor2" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 16, -600 )
+
+[node name="ActivableFloor3" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 24, -600 )
+
+[node name="ActivableFloor4" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 32, -600 )
+
+[node name="ActivableFloor5" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 40, -600 )
+
+[node name="ActivableFloor6" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 8, -592 )
+
+[node name="ActivableFloor7" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 16, -592 )
+
+[node name="ActivableFloor8" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 24, -592 )
+
+[node name="ActivableFloor9" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 32, -592 )
+
+[node name="ActivableFloor10" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 40, -592 )
+
+[node name="ActivableFloor11" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 8, -584 )
+
+[node name="ActivableFloor12" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 16, -584 )
+
+[node name="ActivableFloor13" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 24, -584 )
+
+[node name="ActivableFloor14" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 32, -584 )
+
+[node name="ActivableFloor15" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 40, -584 )
+
+[node name="ActivableFloor31" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 8, -552 )
+
+[node name="ActivableFloor32" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 16, -552 )
+
+[node name="ActivableFloor33" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 24, -552 )
+
+[node name="ActivableFloor34" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 32, -552 )
+
+[node name="ActivableFloor35" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 40, -552 )
+
+[node name="ActivableFloor36" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 8, -544 )
+
+[node name="ActivableFloor37" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 16, -544 )
+
+[node name="ActivableFloor38" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 24, -544 )
+
+[node name="ActivableFloor39" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 32, -544 )
+
+[node name="ActivableFloor40" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 40, -544 )
+
+[node name="ActivableFloor41" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 8, -536 )
+
+[node name="ActivableFloor42" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 16, -536 )
+
+[node name="ActivableFloor43" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 24, -536 )
+
+[node name="ActivableFloor44" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 32, -536 )
+
+[node name="ActivableFloor45" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 40, -536 )
+
+[node name="Spikes" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( -24, -384 )
+
+[node name="Spikes2" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 8, -384 )
+
+[node name="Spikes3" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 40, -384 )
+
+[node name="Spikes4" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 56, -384 )
+
+[node name="Spikes5" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 72, -384 )
+
+[node name="Spikes6" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 24, -384 )
+
+[node name="Spikes7" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( -8, -384 )
+
+[node name="Pickup" parent="LevelElements" instance=ExtResource( 12 )]
+position = Vector2( 88, -184 )
+static_item = 1
+
+[node name="Lamp" parent="LevelElements" instance=ExtResource( 14 )]
+position = Vector2( -24, -96 )
+
+[node name="Lamp2" parent="LevelElements" instance=ExtResource( 14 )]
+position = Vector2( 24, -176 )
+
+[node name="TutorialText" parent="LevelElements" instance=ExtResource( 11 )]
+position = Vector2( 0, -40 )
+text = "WASD: Move"
+
+[node name="TutorialText3" parent="LevelElements" instance=ExtResource( 11 )]
+position = Vector2( 96, -152 )
+text = "Click: Use item"
+
+[node name="TutorialText2" parent="LevelElements" instance=ExtResource( 11 )]
+position = Vector2( 24, -344 )
+text = "Space: Jump"
+
+[node name="TutorialText4" parent="LevelElements" instance=ExtResource( 11 )]
+position = Vector2( -112, -640 )
+text = "123 / Wheel: change slot"
+
+[node name="TutorialText5" parent="LevelElements" instance=ExtResource( 11 )]
+position = Vector2( -112, -1040 )
+text = "The level floor will start falling over time"
+
+[node name="Pickup2" parent="LevelElements" instance=ExtResource( 12 )]
+position = Vector2( -104, -584 )
+static_item = 2
+
+[node name="Pickup3" parent="LevelElements" instance=ExtResource( 12 )]
+position = Vector2( -144, -584 )
+static_item = 4
+
+[node name="Pickup5" parent="LevelElements" instance=ExtResource( 12 )]
+position = Vector2( -24, -152 )
+static_item = 4
+
+[node name="Pickup6" parent="LevelElements" instance=ExtResource( 12 )]
+position = Vector2( -24, -136 )
+static_item = 4
+
+[node name="Pickup7" parent="LevelElements" instance=ExtResource( 12 )]
+position = Vector2( -24, -120 )
+static_item = 4
+
+[node name="Pickup4" parent="LevelElements" instance=ExtResource( 12 )]
+position = Vector2( -240, -1184 )
+static_item = 4
+
+[node name="Square" parent="LevelElements" instance=ExtResource( 10 )]
+position = Vector2( -24, -600 )
+texture = ExtResource( 13 )
+
+[node name="Square2" parent="LevelElements" instance=ExtResource( 10 )]
+position = Vector2( -24, -264 )
+texture = ExtResource( 13 )
+
+[node name="Square3" parent="LevelElements" instance=ExtResource( 10 )]
+position = Vector2( 40, -312 )
+texture = ExtResource( 17 )
+
+[node name="Square4" parent="LevelElements" instance=ExtResource( 10 )]
+position = Vector2( 40, -424 )
+texture = ExtResource( 17 )
+
+[node name="Square5" parent="LevelElements" instance=ExtResource( 10 )]
+position = Vector2( 0, -424 )
+texture = ExtResource( 13 )
+
+[node name="Sprite" type="Sprite" parent="LevelElements"]
+position = Vector2( 0, -24 )
+rotation = -0.139626
+scale = Vector2( 0.8, 0.9 )
+texture = ExtResource( 15 )
+
+[node name="ChangeFallSpeed" parent="LevelElements" instance=ExtResource( 16 )]
+position = Vector2( -88, -1040 )
+fall_speed = 0.3
+
+[node name="LevelEnd" parent="LevelElements" instance=ExtResource( 18 )]
+position = Vector2( -304, -1400 )

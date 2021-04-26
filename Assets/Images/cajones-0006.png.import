@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tables.png-3b1225e4e78b042fab05e8240d58bbae.stex"
+path="res://.import/cajones-0006.png-88b6ab4d419a2fa4b1d62e6c76540f4a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/tables.png"
-dest_files=[ "res://.import/tables.png-3b1225e4e78b042fab05e8240d58bbae.stex" ]
+source_file="res://Assets/Images/cajones-0006.png"
+dest_files=[ "res://.import/cajones-0006.png-88b6ab4d419a2fa4b1d62e6c76540f4a.stex" ]
 
 [params]
 

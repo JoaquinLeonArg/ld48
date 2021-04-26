@@ -1,5 +1,4 @@
 extends Item
 
-
-func process_in_inventory(_delta):
-	$MouseHint.visible = false
+func item_flags():
+	return ["FLASHLIGHT"]

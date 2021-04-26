@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
-onready var navigation = get_tree().get_root().find_node("Navigation2D", true, false)
+export(NodePath) var nav
+onready var navigation = get_node(nav)
 onready var destinations = navigation.get_node("Destinations")
 
 var chasing

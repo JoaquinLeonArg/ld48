@@ -19,3 +19,6 @@ texture = ExtResource( 2 )
 hframes = 13
 vframes = 6
 frame = 27
+
+[connection signal="body_entered" from="." to="." method="_on_Floor_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_Floor_body_exited"]

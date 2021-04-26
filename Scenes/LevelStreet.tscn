@@ -1,0 +1,239 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Components/Door.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Components/GameGUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Components/Camera.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Components/PlayerCharacter.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Components/Button.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Components/Floors/ActivableFloor.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Components/BgEffect.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Components/Tiles/Level2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Components/Spikes.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Components/Pickup.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Components/ChangeFallSpeed.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Components/LevelEnd.tscn" type="PackedScene" id=18]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Level2" parent="." instance=ExtResource( 8 )]
+
+[node name="PlayerCharacter" parent="." instance=ExtResource( 4 )]
+SPEED = 6
+MAX_SPEED = 60
+
+[node name="BgEffect" parent="." instance=ExtResource( 7 )]
+position = Vector2( 0, 0 )
+amount = 1000
+
+[node name="GameGUI" parent="." instance=ExtResource( 2 )]
+
+[node name="Camera2D" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( -160, -64 )
+tracked_object = NodePath("../PlayerCharacter")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.235294, 0.235294, 0.235294, 1 )
+
+[node name="LevelElements" type="Node2D" parent="."]
+
+[node name="Door" parent="LevelElements" instance=ExtResource( 1 )]
+position = Vector2( 232, -456 )
+rotation = 1.5708
+locked = true
+
+[node name="Pickup" parent="LevelElements" instance=ExtResource( 12 )]
+position = Vector2( 640, -288 )
+
+[node name="Pickup4" parent="LevelElements" instance=ExtResource( 12 )]
+position = Vector2( 112, -48 )
+static_item = 4
+
+[node name="Pickup2" parent="LevelElements" instance=ExtResource( 12 )]
+position = Vector2( 280, -608 )
+
+[node name="Pickup3" parent="LevelElements" instance=ExtResource( 12 )]
+position = Vector2( 128, -672 )
+static_item = 1
+
+[node name="Button" parent="LevelElements" instance=ExtResource( 5 )]
+position = Vector2( 48, -432 )
+timeout = 10.0
+targets = [ NodePath("../ActivableFloor2"), NodePath("../ActivableFloor3"), NodePath("../ActivableFloor4") ]
+
+[node name="LevelEnd" parent="LevelElements" instance=ExtResource( 18 )]
+position = Vector2( 472, -504 )
+
+[node name="ActivableFloor2" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 376, -520 )
+active_time = 8
+
+[node name="ActivableFloor3" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 376, -504 )
+active_time = 8
+
+[node name="ActivableFloor4" parent="LevelElements" instance=ExtResource( 6 )]
+position = Vector2( 376, -488 )
+active_time = 8
+
+[node name="Spikes" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 88, -104 )
+
+[node name="Spikes2" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 104, -104 )
+
+[node name="Spikes3" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 120, -104 )
+
+[node name="Spikes4" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 136, -104 )
+
+[node name="Spikes5" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 152, -104 )
+
+[node name="Spikes6" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 168, -104 )
+
+[node name="Spikes7" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 248, -232 )
+
+[node name="Spikes22" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 264, -232 )
+
+[node name="Spikes23" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 264, -248 )
+
+[node name="Spikes24" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 248, -248 )
+
+[node name="Spikes25" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 232, -248 )
+
+[node name="Spikes26" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 232, -264 )
+
+[node name="Spikes27" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 248, -264 )
+
+[node name="Spikes28" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 248, -280 )
+
+[node name="Spikes29" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 264, -296 )
+
+[node name="Spikes30" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 408, -392 )
+
+[node name="Spikes31" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 424, -376 )
+
+[node name="Spikes32" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 440, -360 )
+
+[node name="Spikes33" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 456, -376 )
+
+[node name="Spikes34" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 472, -392 )
+
+[node name="Spikes35" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 440, -408 )
+
+[node name="Spikes36" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 424, -424 )
+
+[node name="Spikes37" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 552, -376 )
+
+[node name="Spikes39" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 456, -600 )
+
+[node name="Spikes40" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 408, -680 )
+
+[node name="Spikes41" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 392, -680 )
+
+[node name="Spikes42" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 376, -680 )
+
+[node name="Spikes43" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 376, -632 )
+
+[node name="Spikes44" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 392, -632 )
+
+[node name="Spikes45" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 408, -632 )
+
+[node name="Spikes46" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 312, -616 )
+
+[node name="Spikes47" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 264, -680 )
+
+[node name="Spikes38" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 552, -360 )
+
+[node name="Spikes8" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 184, -120 )
+
+[node name="Spikes9" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 184, -136 )
+
+[node name="Spikes10" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 168, -136 )
+
+[node name="Spikes11" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 168, -120 )
+
+[node name="Spikes12" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 152, -120 )
+
+[node name="Spikes13" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 152, -136 )
+
+[node name="Spikes14" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 136, -136 )
+
+[node name="Spikes15" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 136, -120 )
+
+[node name="Spikes16" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 120, -120 )
+
+[node name="Spikes17" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 120, -136 )
+
+[node name="Spikes18" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 104, -136 )
+
+[node name="Spikes19" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 104, -120 )
+
+[node name="Spikes20" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 88, -120 )
+
+[node name="Spikes21" parent="LevelElements" instance=ExtResource( 9 )]
+position = Vector2( 88, -120 )
+
+[node name="ChangeFallSpeed" parent="LevelElements" instance=ExtResource( 16 )]
+position = Vector2( 96, 0 )
+fall_speed = 0.6
+
+[node name="ChangeFallSpeed2" parent="LevelElements" instance=ExtResource( 16 )]
+position = Vector2( 136, -664 )
+fall_speed = 0.15
+
+[node name="NavPerros1" type="Navigation2D" parent="."]
+
+[node name="Destinations" type="Node2D" parent="NavPerros1"]
+
+[node name="Position2D" type="Position2D" parent="NavPerros1/Destinations"]
+position = Vector2( 160, -104 )
+
+[node name="Position2D2" type="Position2D" parent="NavPerros1/Destinations"]
+position = Vector2( 208, -176 )
+
+[node name="Position2D3" type="Position2D" parent="NavPerros1/Destinations"]
+position = Vector2( 104, -176 )

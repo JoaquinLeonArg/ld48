@@ -18,7 +18,6 @@ func _process(delta):
 		$Hint.visible = true
 	else:
 		$Hint.visible = false
-	
 		
 	if Input.is_action_just_pressed("interact") and self.position.distance_to(GameState.player.position) < 16:
 		GameState.inventory.pickup(self.item)

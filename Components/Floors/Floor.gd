@@ -19,18 +19,28 @@ func _process(delta):
 	if self.falling:
 		self.position.y += delta*10
 		self.modulate.a -= delta*0.5
+	if self.player_stepping:
+		GameState.player.fall_timer = 0
 
 func spin_and_destroy():
 	self.spinning = true
-	yield(get_tree().create_timer(2), "timeout")
+	
+	$Timer.start(1)
+
+func _on_Floor_body_entered(body):
+	if body == GameState.player:
+		self.player_stepping = true
+
+func _on_Floor_body_exited(body):
+	if body == GameState.player:
+		self.player_stepping = false
+
+func _on_Timer_timeout():
 	self.falling = true
 	self.spinning = false
 	$CollisionShape2D.disabled = true
-	yield(get_tree().create_timer(1), "timeout")
+	$Timer2.start(1)
+	
+
+func _on_Timer2_timeout():
 	queue_free()
-
-func _on_Floor_body_entered(body):
-	self.player_stepping = true
-
-func _on_Floor_body_exited(body):
-	self.player_stepping = false
