@@ -62,3 +62,4 @@ func _process(delta):
 	else:
 		self.frame += delta*10
 	$Sprite.frame = int(self.frame) % 8
+	print(GameState.inventory.get_current_item())
