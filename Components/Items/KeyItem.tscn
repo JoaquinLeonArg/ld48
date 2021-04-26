@@ -8,3 +8,4 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 centered = false
 script = ExtResource( 1 )
+max_uses = -1
