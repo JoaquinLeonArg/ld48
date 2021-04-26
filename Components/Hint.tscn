@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Images/item_hint.png" type="Texture" id=1]
+[ext_resource path="res://Components/Hint.gd" type="Script" id=2]
+
+[node name="Hint" type="Sprite"]
+visible = false
+self_modulate = Color( 1, 1, 0.392157, 0.392157 )
+show_behind_parent = true
+texture = ExtResource( 1 )
+script = ExtResource( 2 )

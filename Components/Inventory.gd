@@ -30,7 +30,7 @@ func _process(delta):
 		$Slot2.self_modulate.a = 0
 		$Slot3.self_modulate.a = 1
 
-	if Input.is_action_just_pressed("ui_accept") and self.slots[self.selected_slot].get_child_count() == 1:
+	if Input.is_action_just_pressed("use_item") and self.slots[self.selected_slot].get_child_count() == 1:
 		self.slots[self.selected_slot].get_child(0).on_use()
 		self.slots[self.selected_slot].get_child(0).process_durability()
 

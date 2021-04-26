@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Components/Inventory.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Images/dither_sides.png" type="Texture" id=2]
 
 [node name="GameGUI" type="CanvasLayer"]
 
@@ -9,4 +10,8 @@ margin_left = 640.0
 margin_top = 620.0
 margin_right = -640.0
 margin_bottom = -100.0
-rect_scale = Vector2( 2, 2 )
+
+[node name="Darkness" type="Sprite" parent="."]
+scale = Vector2( 10, 10 )
+texture = ExtResource( 2 )
+centered = false

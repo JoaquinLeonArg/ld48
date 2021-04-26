@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Sprite
+
+func _process(delta):
+	self.y += delta*5
+	if self.modulate.a > 0.1:
+		self.modulate.a -= delta
+	else:
+		queue_free()
+"
+
+[node name="FallingFloor" type="Sprite"]
+z_index = -1
+z_as_relative = false
+script = SubResource( 1 )
