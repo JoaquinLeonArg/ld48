@@ -10,7 +10,8 @@ var Player
 
 func _ready():
 	$Cone.rotation_degrees = self.angle_offset
-	Player = get_node("/root").find_node("PlayerCharacter", true, false)
+	Player = GameState.player
+
 
 
 func _process(delta):

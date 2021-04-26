@@ -5,7 +5,7 @@
 [ext_resource path="res://Components/PlayerCharacter.gd" type="Script" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 6.0
+radius = 11.1548
 
 [node name="PlayerCharacter" instance=ExtResource( 1 )]
 z_index = 1
