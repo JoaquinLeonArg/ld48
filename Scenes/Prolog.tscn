@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Components/TransitionBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/LevelHouse.tscn" type="PackedScene" id=2]
+
+[node name="Prolog" type="Node2D"]
+
+[node name="TransitionBase" parent="." instance=ExtResource( 1 )]
+next_scene = ExtResource( 2 )

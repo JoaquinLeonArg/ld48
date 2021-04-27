@@ -28,17 +28,23 @@ _global_script_classes=[ {
 "class": "TemplateCharacter",
 "language": "GDScript",
 "path": "res://Components/TemplateCharacter.gd"
+}, {
+"base": "Sprite",
+"class": "TransitionBase",
+"language": "GDScript",
+"path": "res://Components/TransitionBase.gd"
 } ]
 _global_script_class_icons={
 "Floor": "",
 "GitAPI": "",
 "Item": "",
-"TemplateCharacter": ""
+"TemplateCharacter": "",
+"TransitionBase": ""
 }
 
 [application]
 
-config/name="LD48"
+config/name="Rock Bottom"
 run/main_scene="res://Scenes/Menu.tscn"
 config/icon="res://icon.png"
 config/windows_native_icon="res://icon.ico"

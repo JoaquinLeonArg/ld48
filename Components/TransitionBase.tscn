@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Images/fade.png" type="Texture" id=1]
+[ext_resource path="res://Components/TransitionBase.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 200
+font_data = ExtResource( 3 )
+
+[node name="TransitionBase" type="Sprite"]
+texture = ExtResource( 1 )
+centered = false
+script = ExtResource( 2 )
+text = "Maybe I regret getting here. My life became a boring routine, going to work to receive only insults and demands from my boss and then return home, get depressed and go to sleep. I’d like to reverse everything that led me to be here, excavate those annoying memories that disturb me in every decision..."
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_top = 220.0
+margin_right = 6400.0
+margin_bottom = 2020.0
+rect_scale = Vector2( 0.2, 0.2 )
+rect_clip_content = false
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center][/center]"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

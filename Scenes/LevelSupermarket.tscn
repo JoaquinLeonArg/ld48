@@ -1,16 +1,25 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Components/Tiles/Level3.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Components/GameGUI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Components/Camera.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Components/PlayerCharacter.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Components/Door.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Sfx/Sonido-lluviarayoESCENA1.mp3" type="AudioStream" id=6]
 [ext_resource path="res://Components/BgEffect.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Level2End.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Components/Pickup.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Components/ChangeFallSpeed.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Components/LevelEnd.tscn" type="PackedScene" id=18]
 
 [sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+func _on_Music_finished():
+	$Music.play()
+"
+
+[sub_resource type="GDScript" id=2]
 script/source = "extends CanvasModulate
 
 func _on_Timer_timeout():
@@ -23,6 +32,7 @@ func _on_Timer2_timeout():
 "
 
 [node name="Node2D" type="Node2D"]
+script = SubResource( 1 )
 
 [node name="Level3" parent="." instance=ExtResource( 1 )]
 
@@ -42,7 +52,7 @@ tracked_object = NodePath("../PlayerCharacter")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.0392157, 0.0392157, 0.0392157, 1 )
-script = SubResource( 1 )
+script = SubResource( 2 )
 
 [node name="Timer" type="Timer" parent="CanvasModulate"]
 autostart = true
@@ -91,10 +101,16 @@ locked = true
 
 [node name="LevelEnd" parent="LevelElements" instance=ExtResource( 18 )]
 position = Vector2( 648, -8 )
+next_level = ExtResource( 8 )
 
 [node name="ChangeFallSpeed" parent="LevelElements" instance=ExtResource( 16 )]
 position = Vector2( 16, 0 )
 fall_speed = 2.0
 
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
+
 [connection signal="timeout" from="CanvasModulate/Timer" to="CanvasModulate" method="_on_Timer_timeout"]
 [connection signal="timeout" from="CanvasModulate/Timer2" to="CanvasModulate" method="_on_Timer2_timeout"]
+[connection signal="finished" from="Music" to="." method="_on_Music_finished"]

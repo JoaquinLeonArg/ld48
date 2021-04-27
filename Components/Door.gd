@@ -28,8 +28,14 @@ func _process(delta):
 	if Input.is_action_just_pressed("use_item") and self.locked and GameState.inventory.get_current_item() and "KEY" in GameState.inventory.get_current_item().item_flags() and self.hovering:
 		self.locked = false
 		GameState.inventory.get_current_item().queue_free()
+		$KeySound.play()
 	elif Input.is_action_just_pressed("interact") and self.clickable and not self.locked:
 		self.open()
+		if not $OpenSound.playing:
+			$OpenSound.play()
+	elif Input.is_action_just_pressed("interact") and self.clickable and self.locked:
+		if not $LockedSound.playing:
+			$LockedSound.play()
 
 func open():
 	$AnimationPlayer.play("Open")

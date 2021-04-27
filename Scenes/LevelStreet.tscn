@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Components/Door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Components/GameGUI.tscn" type="PackedScene" id=2]
@@ -9,16 +9,36 @@
 [ext_resource path="res://Components/BgEffect.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Components/Tiles/Level2.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Components/Spikes.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/LevelSupermarket.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Ending.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Components/Environment/Square.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Components/Pickup.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/Images/cono.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Images/bolsadebasura.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Images/tacho.png" type="Texture" id=15]
 [ext_resource path="res://Components/ChangeFallSpeed.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Components/PerroGordo.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Components/LevelEnd.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Assets/Music/song1.mp3" type="AudioStream" id=19]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+func _on_Music_finished():
+	$Music.play()
+"
+
+[sub_resource type="NavigationPolygon" id=2]
+vertices = PoolVector2Array( 96, -120, 64, -112, 64, -152, 64, -200, 176, -240, 272, -200, 272, -128 )
+polygons = [ PoolIntArray( 0, 1, 2 ), PoolIntArray( 3, 4, 5, 6, 0, 2 ) ]
+outlines = [ PoolVector2Array( 64, -152, 64, -112, 96, -120, 272, -128, 272, -200, 176, -240, 64, -200 ) ]
+
+[sub_resource type="NavigationPolygon" id=3]
+vertices = PoolVector2Array( 176, -200, 280, -200, 296, -120, 96, -120, 96, -144, 64, -200, 64, -152 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 0, 4, 6 ) ]
+outlines = [ PoolVector2Array( 64, -152, 96, -144, 96, -120, 296, -120, 280, -200, 176, -200, 64, -200 ) ]
 
 [node name="Node2D" type="Node2D"]
+script = SubResource( 1 )
 
 [node name="Level2" parent="." instance=ExtResource( 8 )]
 
@@ -279,7 +299,7 @@ position = Vector2( 240, -360 )
 texture = ExtResource( 13 )
 
 [node name="Square17" parent="LevelElements" instance=ExtResource( 11 )]
-position = Vector2( 168, -208 )
+position = Vector2( 168, -248 )
 texture = ExtResource( 13 )
 
 [node name="Square18" parent="LevelElements" instance=ExtResource( 11 )]
@@ -330,15 +350,75 @@ texture = ExtResource( 15 )
 position = Vector2( 560, -592 )
 texture = ExtResource( 15 )
 
+[node name="PerroGordo" parent="LevelElements" instance=ExtResource( 17 )]
+position = Vector2( 144, -168 )
+nav = NodePath("../../NavPerros1")
+
+[node name="PerroGordo2" parent="LevelElements" instance=ExtResource( 17 )]
+position = Vector2( 248, -176 )
+nav = NodePath("../../NavPerros1")
+
+[node name="PerroGordo3" parent="LevelElements" instance=ExtResource( 17 )]
+position = Vector2( 392, -400 )
+nav = NodePath("../../NavPerros2")
+
+[node name="PerroGordo4" parent="LevelElements" instance=ExtResource( 17 )]
+position = Vector2( 496, -400 )
+nav = NodePath("../../NavPerros2")
+
+[node name="PerroGordo5" parent="LevelElements" instance=ExtResource( 17 )]
+position = Vector2( 464, -368 )
+nav = NodePath("../../NavPerros2")
+
 [node name="NavPerros1" type="Navigation2D" parent="."]
 
 [node name="Destinations" type="Node2D" parent="NavPerros1"]
 
 [node name="Position2D" type="Position2D" parent="NavPerros1/Destinations"]
-position = Vector2( 160, -104 )
+position = Vector2( 80, -264 )
+
+[node name="Position2D4" type="Position2D" parent="NavPerros1/Destinations"]
+position = Vector2( 136, -240 )
+
+[node name="Position2D5" type="Position2D" parent="NavPerros1/Destinations"]
+position = Vector2( 240, -128 )
+
+[node name="Position2D6" type="Position2D" parent="NavPerros1/Destinations"]
+position = Vector2( 256, -208 )
 
 [node name="Position2D2" type="Position2D" parent="NavPerros1/Destinations"]
 position = Vector2( 208, -176 )
 
 [node name="Position2D3" type="Position2D" parent="NavPerros1/Destinations"]
 position = Vector2( 104, -176 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="NavPerros1"]
+navpoly = SubResource( 2 )
+
+[node name="NavPerros2" type="Navigation2D" parent="."]
+position = Vector2( 248, -232 )
+
+[node name="Destinations" type="Node2D" parent="NavPerros2"]
+
+[node name="Position2D5" type="Position2D" parent="NavPerros2/Destinations"]
+position = Vector2( 240, -128 )
+
+[node name="Position2D2" type="Position2D" parent="NavPerros2/Destinations"]
+position = Vector2( 208, -176 )
+
+[node name="Position2D3" type="Position2D" parent="NavPerros2/Destinations"]
+position = Vector2( 104, -176 )
+
+[node name="Position2D4" type="Position2D" parent="NavPerros2/Destinations"]
+position = Vector2( 104, -128 )
+
+[node name="Position2D6" type="Position2D" parent="NavPerros2/Destinations"]
+position = Vector2( 264, -184 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="NavPerros2"]
+navpoly = SubResource( 3 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+
+[connection signal="finished" from="Music" to="." method="_on_Music_finished"]

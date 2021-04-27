@@ -6,3 +6,5 @@ func on_use():
 	var gfx = megaphone_gfx_scene.instance()
 	gfx.position = GameState.player.position
 	get_tree().root.add_child(gfx)
+	GameState.player.speed_buff = 100
+	$Use.play()

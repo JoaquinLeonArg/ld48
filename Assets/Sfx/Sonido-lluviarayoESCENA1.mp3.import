@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Sonido-lluviarayoESCENA1.mp3-327a0ed54456e25199c944d791108f5a.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sfx/Sonido-lluviarayoESCENA1.mp3"
+dest_files=[ "res://.import/Sonido-lluviarayoESCENA1.mp3-327a0ed54456e25199c944d791108f5a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

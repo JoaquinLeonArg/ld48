@@ -70,3 +70,8 @@ func update_path():
 			$Timer.start()
 	else:
 		path.remove(0)
+
+
+func _on_Area2D_body_entered(body):
+	body.knockback(self.position.direction_to(body.position), 500)
+	GameState.damage += 15

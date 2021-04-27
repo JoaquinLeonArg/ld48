@@ -8,6 +8,7 @@ var jumping = false
 var disable_input = false
 var fall_timer = 0
 var invulnerable = false
+var speed_buff = 0
 
 func _ready():
 	GameState.player = self
@@ -25,25 +26,29 @@ func knockback(direction, strength):
 func update_movement():
 	if not self.active:
 		return
+		
+	if self.speed_buff > 0:
+		self.speed_buff -= .5
 	# First we want to check the mouse position and rotate the character
 	look_at(get_global_mouse_position())
 	
 	# Then we want to check for button presses and move the character.
 	if Input.is_action_pressed("move_down") and not Input.is_action_pressed("move_up") and not self.disable_input:
-		motion.y = clamp(motion.y + SPEED, 0, MAX_SPEED)
+		motion.y = clamp(motion.y + SPEED, 0, MAX_SPEED + self.speed_buff)
 	elif Input.is_action_pressed("move_up") and not Input.is_action_pressed("move_down") and not self.disable_input:
-		motion.y = clamp(motion.y - SPEED, -MAX_SPEED, 0)
+		motion.y = clamp(motion.y - SPEED, -MAX_SPEED - self.speed_buff, 0)
 	else:
 		motion.y = lerp(motion.y, 0, FRICTION)
 	
 	if Input.is_action_pressed("move_left") and not Input.is_action_pressed("move_right") and not self.disable_input:
-		motion.x = clamp(motion.x - SPEED, -MAX_SPEED, 0)
+		motion.x = clamp(motion.x - SPEED, -MAX_SPEED - self.speed_buff, 0)
 	elif Input.is_action_pressed("move_right") and not Input.is_action_pressed("move_left") and not self.disable_input:
-		motion.x = clamp(motion.x + SPEED, 0, MAX_SPEED)
+		motion.x = clamp(motion.x + SPEED, 0, MAX_SPEED  + self.speed_buff)
 	else:
 		motion.x = lerp(motion.x, 0, FRICTION)
 	
 	if Input.is_action_just_pressed("jump") and self.jump_ready and not self.jumping and not self.disable_input:
+		$JumpSound.play()
 		self.jumping = true
 		self.jump_ready = false
 		$Tween.interpolate_property(self, "scale", Vector2(1, 1), Vector2(1.35, 1.35), .5,Tween.TRANS_QUAD, Tween.EASE_OUT)

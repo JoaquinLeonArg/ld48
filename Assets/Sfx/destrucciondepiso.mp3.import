@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/destrucciondepiso.mp3-5776cc27195846a6079b72186fc6dab0.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sfx/destrucciondepiso.mp3"
+dest_files=[ "res://.import/destrucciondepiso.mp3-5776cc27195846a6079b72186fc6dab0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

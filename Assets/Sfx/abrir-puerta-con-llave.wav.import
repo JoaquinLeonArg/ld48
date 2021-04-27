@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/abrir-puerta-con-llave.wav-4fe4bd4bf9890eb748e632bff1abf6e1.sample"
+
+[deps]
+
+source_file="res://Assets/Sfx/abrir-puerta-con-llave.wav"
+dest_files=[ "res://.import/abrir-puerta-con-llave.wav-4fe4bd4bf9890eb748e632bff1abf6e1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

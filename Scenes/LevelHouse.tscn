@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Components/Door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Components/GameGUI.tscn" type="PackedScene" id=2]
@@ -18,9 +18,20 @@
 [ext_resource path="res://Components/ChangeFallSpeed.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Assets/Images/cajones-0006.png" type="Texture" id=17]
 [ext_resource path="res://Components/LevelEnd.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Scenes/LevelStreet.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Level1End.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Assets/Music/song2.mp3" type="AudioStream" id=20]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+
+
+func _on_Music_finished():
+	$Music.play()
+"
 
 [node name="Node2D" type="Node2D"]
+script = SubResource( 1 )
 
 [node name="Level1" parent="." instance=ExtResource( 8 )]
 
@@ -197,3 +208,9 @@ fall_speed = 0.3
 [node name="LevelEnd" parent="LevelElements" instance=ExtResource( 18 )]
 position = Vector2( -304, -1400 )
 next_level = ExtResource( 19 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 20 )
+autoplay = true
+
+[connection signal="finished" from="Music" to="." method="_on_Music_finished"]

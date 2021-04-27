@@ -10,6 +10,9 @@ var restarting = false
 var fall_speed = 9999
 var damage = 0
 
+func _ready():
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), -20)
+
 func _process(delta):
 	if self.restarting:
 		return

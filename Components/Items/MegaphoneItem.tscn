@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Components/Items/MegaphoneItem.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/magaphone_item.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sfx/Megafono.wav" type="AudioStream" id=3]
 
 [node name="MegaphoneItem" type="Sprite"]
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 centered = false
 script = ExtResource( 1 )
+
+[node name="Use" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
